@@ -10,6 +10,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.BasePage;
+import java.util.Random;
+import java.util.UUID;
 
 public class SignUpPageTest {
 
@@ -22,7 +24,10 @@ public class SignUpPageTest {
         driver = BasePage.getDriver();
         driver.manage().window().maximize();
     }
-
+    private String generateRandomName() {
+        String uuid = UUID.randomUUID().toString();
+        return uuid.substring(0, 8);
+    }
     @Test(priority = 1, groups = {"signup"})
     public void verifyButtonPresent() throws InterruptedException {
         driver.get("http://43.204.112.21:8080/");
@@ -45,23 +50,27 @@ public class SignUpPageTest {
         }
 
         // Assuming basePage.takeScreenshot() method is defined in the BasePage class
-        basePage.takeScreenshot("verifyButtonPresent_failure");
+        // basePage.takeScreenshot("verifyButtonPresent_failure");
     }
 
     @Test(priority = 2, groups = {"signup"})
-    public void verifySignUp() throws InterruptedException {
+   public void verifySignUp() throws InterruptedException {
+    	
+    	String firstName = generateRandomName();
+        String lastName = generateRandomName();
+        String email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@email.com";
         driver.get("http://43.204.112.21:8080/");
         WebElement signUpLink = driver.findElement(By.xpath("//h4[contains(text(),'Sign Up')]"));
         signUpLink.click();
 
-        WebElement firstName = driver.findElement(By.xpath("//input[@placeholder='Enter First Name']"));
-        firstName.sendKeys("Jack");
+        WebElement firstNameElement  = driver.findElement(By.xpath("//input[@placeholder='Enter First Name']"));
+        firstNameElement.sendKeys(firstName);
 
-        WebElement lastName = driver.findElement(By.xpath("//input[@placeholder='Enter Last Name']"));
-        lastName.sendKeys("Den");
+        WebElement lastNameElement  = driver.findElement(By.xpath("//input[@placeholder='Enter Last Name']"));
+        lastNameElement.sendKeys(lastName);
 
-        WebElement email = driver.findElement(By.xpath("//input[@placeholder='Enter Email']"));
-        email.sendKeys("test136@test.com");
+        WebElement emailelement = driver.findElement(By.xpath("//input[@placeholder='Enter Email']"));
+        emailelement.sendKeys(email);
 
         WebElement password = driver.findElement(By.xpath("//input[@placeholder='Enter Password']"));
         password.sendKeys("12345678");
@@ -75,9 +84,9 @@ public class SignUpPageTest {
         Thread.sleep(5000);
 
         // Assuming basePage.takeScreenshot() method is defined in the BasePage class
-        basePage.takeScreenshot("verifySignUp_failure");
+        // basePage.takeScreenshot("verifySignUp_failure");
+			
     }
-
 
     @AfterClass
     public void tearDown() {
