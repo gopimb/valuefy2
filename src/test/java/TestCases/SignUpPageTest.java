@@ -12,7 +12,8 @@ import org.testng.annotations.Test;
 import utils.BasePage;
 import java.util.Random;
 import java.util.UUID;
-
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterSuite;
 public class SignUpPageTest {
 
     private WebDriver driver;
