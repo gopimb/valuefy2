@@ -20,7 +20,7 @@ public class BasePage {
         initializeDriver();
     }
 
-    @BeforeClass
+    @BeforeSuite
     public static WebDriver getDriver() {
         if (driver == null) {
             initializeDriver();
@@ -43,7 +43,7 @@ public class BasePage {
         }
     }
     
-    @AfterClass
+    @AfterSuite
     public static void quitDriver() {
         if (driver != null) {
             driver.quit();
