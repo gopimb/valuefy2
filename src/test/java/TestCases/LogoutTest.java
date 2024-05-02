@@ -48,7 +48,7 @@ public class LogoutTest {
 
         WebElement logoutBtn = driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         logoutBtn.click();
-        basePage.takeScreenshot("verifyUserLogout_failure");
+        // basePage.takeScreenshot("verifyUserLogout_failure");
         Thread.sleep(5000);
     }
 
