@@ -19,7 +19,7 @@ public class SignUpPageTest {
     private BasePage basePage;
 
     @SuppressWarnings("unchecked")
-    @BeforeClass
+    @BeforeSuite
     public void setUp() {
         driver = BasePage.getDriver();
         driver.manage().window().maximize();
@@ -88,7 +88,7 @@ public class SignUpPageTest {
 			
     }
 
-    @AfterClass
+    @AfterSuite
     public void tearDown() {
         System.out.println("Closing WebDriver...");
        BasePage.quitDriver();
