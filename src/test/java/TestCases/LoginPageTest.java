@@ -45,7 +45,7 @@ public class LoginPageTest {
             System.out.println("Link with text 'Sign Up' is NOT present.");
         }
         
-        basePage.takeScreenshot("verifySignUpLoginLink_failure");
+        // basePage.takeScreenshot("verifySignUpLoginLink_failure");
     }
 
     @Test(priority = 2, groups = {"login"})
@@ -62,7 +62,7 @@ public class LoginPageTest {
             System.out.println("Button element with text 'Login' is NOT present.");
         }
         
-        basePage.takeScreenshot("verifyLoginButton_failure");
+        // basePage.takeScreenshot("verifyLoginButton_failure");
     }
 
     @Test(priority = 3, groups = {"login"})
@@ -77,7 +77,7 @@ public class LoginPageTest {
         WebElement loginBtn = driver.findElement(By.xpath("//input[@value='Login']"));
         loginBtn.click();
         
-        basePage.takeScreenshot("verifyLogin_failure");
+        // basePage.takeScreenshot("verifyLogin_failure");
 
         Thread.sleep(5000);
     }
