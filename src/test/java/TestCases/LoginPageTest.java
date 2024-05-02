@@ -13,18 +13,18 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.BasePage;
 
-public class LoginPageTest {
+public class LoginPageTest extends BasePage {
 
     private WebDriver driver;
-    private BasePage basePage;
 
-    @BeforeClass
-    public void setUp()throws MalformedURLException, IOException {
-    	System.out.println("Initializing WebDriver...");
-        driver = BasePage.getDriver();
-        driver.manage().window().maximize();
-        System.out.println("WebDriver initialized.");
-    }
+  //  @BeforeClass
+//    public void setUp()throws MalformedURLException, IOException {
+//    	System.out.println("Initializing WebDriver...");
+//     //   driver = BasePage.getDriver();
+//        driver.manage().window().maximize();
+//       // basePage.initializeDriver(); 
+//        System.out.println("WebDriver initialized.");
+//    }
 
     @Test(priority = 1, groups = {"login"})
     public void verifySignUpLoginLink() throws InterruptedException {
@@ -45,7 +45,7 @@ public class LoginPageTest {
             System.out.println("Link with text 'Sign Up' is NOT present.");
         }
         
-        // basePage.takeScreenshot("verifySignUpLoginLink_failure");
+        //basePage.takeScreenshot("verifySignUpLoginLink_failure");
     }
 
     @Test(priority = 2, groups = {"login"})
@@ -62,7 +62,7 @@ public class LoginPageTest {
             System.out.println("Button element with text 'Login' is NOT present.");
         }
         
-        // basePage.takeScreenshot("verifyLoginButton_failure");
+     //   basePage.takeScreenshot("verifyLoginButton_failure");
     }
 
     @Test(priority = 3, groups = {"login"})
@@ -77,15 +77,15 @@ public class LoginPageTest {
         WebElement loginBtn = driver.findElement(By.xpath("//input[@value='Login']"));
         loginBtn.click();
         
-        // basePage.takeScreenshot("verifyLogin_failure");
+       // basePage.takeScreenshot("verifyLogin_failure");
 
         Thread.sleep(5000);
     }
 
-    @AfterClass
-    public void tearDown() {
-        System.out.println("Closing WebDriver...");
-       BasePage.quitDriver();
-        System.out.println("WebDriver closed.");
-    }
+//    @AfterClass
+//    public void tearDown() {
+//        System.out.println("Closing WebDriver...");
+//        basePage.quitDriver();
+//        System.out.println("WebDriver closed.");
+//    }
 }

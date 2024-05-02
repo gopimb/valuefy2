@@ -14,6 +14,22 @@
           <include name="verifySignUp"/>
         </methods>
       </class> <!-- TestCases.SignUpPageTest -->
+      <class name="TestCases.LoginPageTest">
+        <methods>
+          <include name="verifySignUpLoginLink"/>
+          <include name="tearDown"/>
+          <include name="verifyLogin"/>
+          <include name="verifyLoginButton"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- TestCases.LoginPageTest -->
+      <class name="TestCases.LogoutTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="verifyUserLogout"/>
+        </methods>
+      </class> <!-- TestCases.LogoutTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

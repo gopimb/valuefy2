@@ -5,22 +5,18 @@
     <listener class-name="TestCases.CustomListener"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="signup"/>
+      </run>
+    </groups>
     <classes>
       <class name="TestCases.SignUpPageTest">
         <methods>
           <include name="verifyButtonPresent"/>
-          <include name="closeBrowser"/>
-          <include name="openURL"/>
           <include name="verifySignUp"/>
         </methods>
       </class> <!-- TestCases.SignUpPageTest -->
-      <class name="TestCases.LogoutTest">
-        <methods>
-          <include name="openURL"/>
-          <include name="verifyUserLogout"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- TestCases.LogoutTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

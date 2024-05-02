@@ -17,11 +17,12 @@ public class LogoutTest {
     private BasePage basePage;
 
 
-    @BeforeClass
-    public void setUp() {
-        driver = BasePage.getDriver();
-        driver.manage().window().maximize();
-    }
+//    @BeforeClass
+//    public void setUp() {
+//     //   driver = BasePage.getDriver();
+//        driver.manage().window().maximize();
+//      
+//    }
 
 
     @Test(priority = 1, groups = {"logout"})
@@ -48,14 +49,14 @@ public class LogoutTest {
 
         WebElement logoutBtn = driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         logoutBtn.click();
-        // basePage.takeScreenshot("verifyUserLogout_failure");
+     //   basePage.takeScreenshot("verifyUserLogout_failure");
         Thread.sleep(5000);
     }
 
-    @AfterClass
-    public void tearDown() {
-        System.out.println("Closing WebDriver...");
-       BasePage.quitDriver();
-        System.out.println("WebDriver closed.");
-    }
+//    @AfterClass
+//    public void tearDown() {
+//        System.out.println("Closing WebDriver...");
+//        basePage.quitDriver();
+//        System.out.println("WebDriver closed.");
+//    }
 }

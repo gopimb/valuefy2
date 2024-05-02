@@ -10,27 +10,26 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.BasePage;
-import java.util.Random;
 import java.util.UUID;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.AfterSuite;
-public class SignUpPageTest {
 
-    private WebDriver driver;
-    private BasePage basePage;
+public class SignUpPageTest extends BasePage {
 
-    @SuppressWarnings("unchecked")
-    @BeforeSuite
-    public void setUp() {
-        driver = BasePage.getDriver();
-        driver.manage().window().maximize();
-    }
+	//private WebDriver driver;
+
+//    public SignUpPageTest() {
+//     //   driver = BasePage.getDriver();
+//        driver.manage().window().maximize();
+//        System.out.println("Driver Mila");
+//    }
+    
     private String generateRandomName() {
         String uuid = UUID.randomUUID().toString();
         return uuid.substring(0, 8);
     }
+
     @Test(priority = 1, groups = {"signup"})
     public void verifyButtonPresent() throws InterruptedException {
+    	
         driver.get("http://43.204.112.21:8080/");
         Thread.sleep(3000);
         WebElement signUpLink = driver.findElement(By.xpath("//h4[contains(text(),'Sign Up')]"));
@@ -51,27 +50,26 @@ public class SignUpPageTest {
         }
 
         // Assuming basePage.takeScreenshot() method is defined in the BasePage class
-        // basePage.takeScreenshot("verifyButtonPresent_failure");
+       // basePage.takeScreenshot("verifyButtonPresent_failure");
     }
 
     @Test(priority = 2, groups = {"signup"})
-   public void verifySignUp() throws InterruptedException {
-    	
-    	String firstName = generateRandomName();
+    public void verifySignUp() throws InterruptedException {
+        String firstName = generateRandomName();
         String lastName = generateRandomName();
         String email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@email.com";
         driver.get("http://43.204.112.21:8080/");
         WebElement signUpLink = driver.findElement(By.xpath("//h4[contains(text(),'Sign Up')]"));
         signUpLink.click();
 
-        WebElement firstNameElement  = driver.findElement(By.xpath("//input[@placeholder='Enter First Name']"));
+        WebElement firstNameElement = driver.findElement(By.xpath("//input[@placeholder='Enter First Name']"));
         firstNameElement.sendKeys(firstName);
 
-        WebElement lastNameElement  = driver.findElement(By.xpath("//input[@placeholder='Enter Last Name']"));
+        WebElement lastNameElement = driver.findElement(By.xpath("//input[@placeholder='Enter Last Name']"));
         lastNameElement.sendKeys(lastName);
 
-        WebElement emailelement = driver.findElement(By.xpath("//input[@placeholder='Enter Email']"));
-        emailelement.sendKeys(email);
+        WebElement emailElement = driver.findElement(By.xpath("//input[@placeholder='Enter Email']"));
+        emailElement.sendKeys(email);
 
         WebElement password = driver.findElement(By.xpath("//input[@placeholder='Enter Password']"));
         password.sendKeys("12345678");
@@ -85,14 +83,13 @@ public class SignUpPageTest {
         Thread.sleep(5000);
 
         // Assuming basePage.takeScreenshot() method is defined in the BasePage class
-        // basePage.takeScreenshot("verifySignUp_failure");
-			
+       // basePage.takeScreenshot("verifySignUp_failure");
     }
 
-    @AfterSuite
-    public void tearDown() {
-        System.out.println("Closing WebDriver...");
-       BasePage.quitDriver();
-        System.out.println("WebDriver closed.");
-    }
+@AfterClass
+public void tearDown() {
+    // Close the driver after all tests
+    quitDriver();
+}
+
 }

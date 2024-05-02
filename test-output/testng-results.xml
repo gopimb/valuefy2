@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="4" total="6" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-02T15:23:50 IST" name="Default suite" finished-at="2024-05-02T15:24:10 IST" duration-ms="20306">
+  <suite started-at="2024-05-02T19:29:33 IST" name="Suite" finished-at="2024-05-02T19:29:43 IST" duration-ms="9729">
     <groups>
-      <group name="logout">
-        <method signature="LogoutTest.verifyUserLogout()[pri:1, instance:TestCases.LogoutTest@6989da5e]" name="verifyUserLogout" class="TestCases.LogoutTest"/>
-      </group> <!-- logout -->
+      <group name="signup">
+        <method signature="SignUpPageTest.verifyButtonPresent()[pri:1, instance:TestCases.SignUpPageTest@77a98a6a]" name="verifyButtonPresent" class="TestCases.SignUpPageTest"/>
+        <method signature="SignUpPageTest.verifySignUp()[pri:2, instance:TestCases.SignUpPageTest@77a98a6a]" name="verifySignUp" class="TestCases.SignUpPageTest"/>
+      </group> <!-- signup -->
     </groups>
-    <test started-at="2024-05-02T15:23:50 IST" name="Default test" finished-at="2024-05-02T15:24:10 IST" duration-ms="20306">
-      <class name="TestCases.LogoutTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:TestCases.LogoutTest@6989da5e]" started-at="2024-05-02T15:23:50 IST" name="setUp" finished-at="2024-05-02T15:23:54 IST" duration-ms="3721" status="PASS">
+    <test started-at="2024-05-02T19:29:33 IST" name="Test" finished-at="2024-05-02T19:29:43 IST" duration-ms="9729">
+      <class name="TestCases.SignUpPageTest">
+        <test-method signature="verifyButtonPresent()[pri:1, instance:TestCases.SignUpPageTest@77a98a6a]" started-at="2024-05-02T19:29:33 IST" name="verifyButtonPresent" finished-at="2024-05-02T19:29:37 IST" duration-ms="3874" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyUserLogout()[pri:1, instance:TestCases.LogoutTest@6989da5e]" started-at="2024-05-02T15:23:54 IST" name="verifyUserLogout" finished-at="2024-05-02T15:24:10 IST" duration-ms="16060" status="PASS">
+        </test-method> <!-- verifyButtonPresent -->
+        <test-method signature="verifySignUp()[pri:2, instance:TestCases.SignUpPageTest@77a98a6a]" started-at="2024-05-02T19:29:37 IST" name="verifySignUp" finished-at="2024-05-02T19:29:43 IST" duration-ms="5778" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserLogout -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.LogoutTest@6989da5e]" started-at="2024-05-02T15:24:10 IST" name="tearDown" finished-at="2024-05-02T15:24:10 IST" duration-ms="455" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- TestCases.LogoutTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- verifySignUp -->
+      </class> <!-- TestCases.SignUpPageTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
