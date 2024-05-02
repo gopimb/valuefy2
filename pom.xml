@@ -40,19 +40,7 @@
         <version>6.11.0</version>
         <scope>compile</scope>
     </dependency>
-
-	  </dependency>
-    <!-- Add other dependencies as needed -->
-    <dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-java</artifactId>
-    <version>3.141.59</version>
-</dependency>
-<dependency>
-    <groupId>commons-io</groupId>
-    <artifactId>commons-io</artifactId>
-    <version>2.11.0</version>
-</dependency>
+    
     <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
 <dependency>
     <groupId>io.cucumber</groupId>
@@ -89,10 +77,16 @@
 </dependency>
     <!-- Add other dependencies as needed -->
     <dependency>
-    	<groupId>com.mobileCapability</groupId>
-    	<artifactId>AppiumAutomationFramework</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
-    </dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.141.59</version>
+</dependency>
+
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.11.0</version>
+</dependency>
   </dependencies>
 
 <build>
